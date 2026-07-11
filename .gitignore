@@ -1,0 +1,19 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Env files
+.env
+*.env
+
+# Uploaded files
+backend/uploads/
+backend/vectorstore/
+
+# OS
+.DS_Store
