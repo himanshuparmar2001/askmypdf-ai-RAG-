@@ -12,8 +12,9 @@ frontend/dist/
 *.env
 
 # Uploaded files
-backend/uploads/
-backend/vectorstore/
-
+backend/uploads/*
+!backend/uploads/.gitkeep
+backend/vectorstore/*
+!backend/vectorstore/.gitkeep
 # OS
 .DS_Store
