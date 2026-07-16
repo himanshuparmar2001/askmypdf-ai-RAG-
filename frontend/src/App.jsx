@@ -2,6 +2,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
+const API_URL = import.meta.env.VITE_API_URL
+
+
 function App() {
   const [selectedFile, setSelectedFile] = useState(null)
   const [uploadStatus, setUploadStatus] = useState('')
@@ -27,7 +30,7 @@ function App() {
     setUploadStatus('Reading and indexing your document...')
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/upload', formData, {
+      const response = await axios.post(`${API_URL}/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       })
       setUploadStatus(`Ready: ${response.data.num_pages} pages, ${response.data.num_chunks} chunks indexed.`)
@@ -47,7 +50,7 @@ function App() {
     setIsAsking(true)
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/ask', {
+      const response = await axios.post(`${API_URL}/ask`, {
         question: currentQuestion
       })
 
